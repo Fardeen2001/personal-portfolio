@@ -5,6 +5,7 @@ import logo from "@/public/logo.png";
 import NavList from "./NavList";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import MenuOverlayBar from "./MenuOverlayBar";
 const navLinks = [
   { title: "About", href: "#about" },
   { title: "Projects", href: "#projects" },
@@ -13,8 +14,8 @@ const navLinks = [
 const Navbar = () => {
   const [navBarOpen, setNavBarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10  bg-[#121212] bg-opacity-90">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <nav className="fixed mx-auto top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
+      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link href={"/"}>
           <Image src={logo} alt="logo" quality={100} width={70} />
         </Link>
@@ -45,6 +46,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+      {navBarOpen && <MenuOverlayBar links={navLinks} />}
     </nav>
   );
 };
