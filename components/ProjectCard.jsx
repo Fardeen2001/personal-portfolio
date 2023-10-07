@@ -9,7 +9,8 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
           className="h-52 md:h-72 rounded-t-xl"
           style={{
             backgroundImage: `url(${imgUrl.src})`,
-            backgroundSize: "cover",
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-0 opacity-0 group-hover:bg-opacity-80 group-hover:opacity-100 transition-opacity duration-500">

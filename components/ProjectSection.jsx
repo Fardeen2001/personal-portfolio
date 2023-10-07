@@ -86,7 +86,7 @@ const ProjectSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-4">
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-5 py-6">
+      <div className="text-white flex  justify-center items-center gap-2 md:gap-5 text-sm md:text-base flex-wrap py-6">
         <ProjectTag
           onClick={handleTagChange}
           name={"All"}
@@ -113,7 +113,7 @@ const ProjectSection = () => {
           isSelected={tag === "CSS"}
         />
       </div>
-      <div>
+      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((item) => (
           <ProjectCard
             key={item.id}
