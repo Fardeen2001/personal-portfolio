@@ -2,11 +2,17 @@
 import Image from "next/image";
 import far from "@/public/png4.png";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 const HeroSection = () => {
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+        >
           <h1 className="text-white mb-4 text-3xl sm:text-4xl lg:text-5xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello, I am
@@ -42,8 +48,13 @@ const HeroSection = () => {
               </span>
             </button>
           </div>
-        </div>
-        <div className="col-span-4 place-self-center">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-4 place-self-center"
+        >
           <div className="rounded-full bg-[#313131] w-[250px] h-[250px] lg:h-[300px] lg:w-[300px] relative overflow-hidden mt-5">
             <Image
               src={far}
@@ -54,7 +65,7 @@ const HeroSection = () => {
               height={500}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
