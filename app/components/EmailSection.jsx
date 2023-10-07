@@ -23,7 +23,6 @@ const EmailSection = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        next: { revalidate: 0 },
         cache: "no-store",
       });
       if (!res.ok) {
@@ -32,7 +31,7 @@ const EmailSection = () => {
       const data = await res.json();
       console.log(data);
       if (data.status === 200) {
-        console, log("message sent");
+        console.log("message sent");
         setEmail("");
         setMessage("");
         setSubject("");
