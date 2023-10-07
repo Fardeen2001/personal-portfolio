@@ -22,7 +22,6 @@ export async function POST(req, res) {
         </>
       ),
     });
-    console.log(data);
 
     return NextResponse.json(data);
   } catch (error) {
