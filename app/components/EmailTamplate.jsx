@@ -1,5 +1,4 @@
 const EmailTamplate = (subject, message) => {
-  console.log(subject, message);
   return (
     <>
       <h1>{subject}</h1>
