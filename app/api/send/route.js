@@ -1,28 +1,27 @@
 import EmailTamplate from "@/app/components/EmailTamplate";
 import { NextResponse, NextRequest } from "next/server";
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { SMTPClient } from "emailjs";
 
 export async function POST(req) {
   try {
     const body = await req.json();
     const { email, subject, message } = body;
-    console.log(email, subject, message);
-
-    const data = await resend.emails.send({
-      from: "1si20et403@gmail.com",
+    const client = new SMTPClient({
+      user: process.env.USEREMAIL,
+      password: process.env.PASSWORD,
+      host: "smtp.gmail.com",
+      ssl: true,
+    });
+    console.log(process.env.PASSWORD);
+    client.send({
+      text: EmailTamplate(subject, message),
+      from: process.env.USEREMAIL,
       to: email,
       subject: subject,
-      react: EmailTamplate(subject, message),
     });
-    console.log(data);
-    if (data.status === "success") {
-      return NextResponse.json({ message: "Email sent successfully!" });
-    }
 
-    return NextResponse.json({ data }, { status: 200 });
+    return NextResponse.json({ data: data }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 400 });
+    return NextResponse.json({ error });
   }
 }

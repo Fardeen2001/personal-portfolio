@@ -13,7 +13,7 @@ const EmailSection = () => {
   const handleSubmitData = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/send", {
+      const res = await fetch("/api/sender", {
         method: "POST",
         body: JSON.stringify({
           email: email,
@@ -23,14 +23,15 @@ const EmailSection = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        cache: "no-store",
+        next: { revalidate: 0 },
+        cache: "no-cache",
       });
       if (!res.ok) {
         throw new Error("invalid data");
       }
       const data = await res.json();
       console.log(data);
-      if (data.status === 200) {
+      if (data.status === 201) {
         console.log("message sent");
         setEmail("");
         setMessage("");
