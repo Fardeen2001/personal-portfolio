@@ -12,56 +12,55 @@ const EmailSection = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  // const handleSubmitData = async (e) => {
-  //   e.preventDefault();
-  //   toast.info(
-  //     "Message sent Successfully!, Fardeen will get back to you soon..",
-  //     {
-  //       position: "bottom-right",
-  //       autoClose: 3000,
-  //       hideProgressBar: false,
-  //       closeOnClick: true,
-  //       pauseOnHover: true,
-  //       draggable: true,
-  //       progress: undefined,
-  //       theme: "colored",
-  //     }
-  //   );
-  //   try {
-  //     const res = await fetch("/api/send", {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         email: email,
-  //         subject: subject,
-  //         message: message,
-  //       }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       next: { revalidate: 0 },
-  //       cache: "no-cache",
-  //     });
-  //     if (!res.ok) {
-  //       throw new Error("invalid data");
-  //     }
+  const handleSubmitData = async (e) => {
+    toast.info(
+      "Message sent Successfully!, Fardeen will get back to you soon..",
+      {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      }
+    );
+    //   try {
+    //     const res = await fetch("/api/send", {
+    //       method: "POST",
+    //       body: JSON.stringify({
+    //         email: email,
+    //         subject: subject,
+    //         message: message,
+    //       }),
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       next: { revalidate: 0 },
+    //       cache: "no-cache",
+    //     });
+    //     if (!res.ok) {
+    //       throw new Error("invalid data");
+    //     }
 
-  //     const data = await res.json();
-  //     console.log(data);
-  //     if (data.status === 201) {
-  //       console.log("message sent");
-  //       setEmail("");
-  //       setMessage("");
-  //       setSubject("");
-  //     }
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
+    //     const data = await res.json();
+    //     console.log(data);
+    //     if (data.status === 201) {
+    //       console.log("message sent");
+    //       setEmail("");
+    //       setMessage("");
+    //       setSubject("");
+    //     }
+    //   } catch (error) {
+    //     console.log(error.message);
+    //   }
+  };
   return (
     <>
       <ToastContainer
         position="bottom-right"
-        autoClose={3000}
+        autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -86,7 +85,7 @@ const EmailSection = () => {
             try my best to get back to you!
           </p>
           <div className="social flex flex-row gap-2">
-            <Link href={"github"}>
+            <Link href={"https://github.com/Fardeen2001"}>
               <Image
                 src={gitIcon}
                 alt="github"
@@ -94,13 +93,13 @@ const EmailSection = () => {
                 className="text-white"
               />
             </Link>
-            <Link href={"linkedin"}>
+            <Link href={"https://www.linkedin.com/in/fardeen-ahamed"}>
               <Image src={linkedinIcon} alt="linkedin" width={50} />
             </Link>
-            <Link href={"twitter"}>
+            <Link href={"https://www.twitter.com/fardeenahamed5"}>
               <Image src={twitterIcon} alt="twitter" width={50} />
             </Link>
-            <Link href={"instagram"}>
+            <Link href={"https://www.instagram.com/far_deen_19"}>
               <Image src={instagramIcon} alt="instagram" width={50} />
             </Link>
           </div>
@@ -108,7 +107,7 @@ const EmailSection = () => {
         <div>
           <form
             className="flex flex-col"
-            // onSubmit={handleSubmitData}
+            onSubmit={handleSubmitData}
             action="https://formsubmit.co/fardeenahamed2001@gmail.com"
             method="POST"
           >
@@ -134,25 +133,11 @@ const EmailSection = () => {
               <input type="hidden" name="_subject" value={subject && message} />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="box" />
-              {/* <input
+              <input
                 type="hidden"
                 name="_next"
-                value={() => {
-                  toast.info(
-                    "Message sent Successfully!, Fardeen will get back to you soon..",
-                    {
-                      position: "bottom-right",
-                      autoClose: 3000,
-                      hideProgressBar: false,
-                      closeOnClick: true,
-                      pauseOnHover: true,
-                      draggable: true,
-                      progress: undefined,
-                      theme: "colored",
-                    }
-                  );
-                }}
-              /> */}
+                value="http://personal-portfolio-fardeen2001.vercel.app/"
+              />
             </div>
             <div className="mb-6">
               <label
