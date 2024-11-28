@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         {children}
         <script src="https://smtpjs.com/v3/smtp.js" defer></script>
-        <script src="https://cdn.brightserp.com/api/opportunities.js"></script>
+        <script src="https://cdn.brightserp.com/api/opportunities.js" defer></script>
       </body>
     </html>
   );
