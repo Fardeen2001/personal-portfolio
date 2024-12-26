@@ -12,10 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+         <meta name="google-site-verification" content="cIn3bzs-1gsJq7MJzmjxin5GSEazzVjxivefiiOycjg" />
+      </head>
       <body className={inter.className}>
         {children}
         <script src="https://smtpjs.com/v3/smtp.js" defer></script>
-        <script src="https://cdn.brightserp.com/api/opportunities.js" defer></script>
+       
       </body>
     </html>
   );
