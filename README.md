@@ -36,3 +36,5 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 added project <a href="https://ranktraq.com" rel="noopener">Rank Traq</a> also https://ranktraq.com
+
+added project <a href="https://nahfastore.com" rel="noopener">Nahfa Store</a> (Shopify e-commerce with SEO, GEO, AEO and Razorpay checkout) also https://nahfastore.com

@@ -2,6 +2,7 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import { Inter } from "next/font/google";
 import { RANKTRAQ_WEBSITE_URL } from "@/data/rankTraq";
+import { NAHFA_STORE_URL } from "@/data/nahfaStore";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       <head>
          <meta name="google-site-verification" content="cIn3bzs-1gsJq7MJzmjxin5GSEazzVjxivefiiOycjg" />
          <link rel="me" href={RANKTRAQ_WEBSITE_URL} />
+         <link rel="me" href={NAHFA_STORE_URL} />
       </head>
       <body className={inter.className}>
         {children}

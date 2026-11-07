@@ -3,6 +3,7 @@ export const RANKTRAQ_APP_URL = "https://app.ranktraq.com";
 
 export const rankTraqProject = {
   title: "Rank Traq",
+  badge: "Featured · Full Stack · GCP",
   description:
     "A production SEO rank-tracking SaaS I built end-to-end with Claude Code — spanning a marketing site and multi-tenant web app on GCP Cloud Run. Rank Traq helps teams track Google keyword positions, monitor AI Overview citations, sync Search Console data, and buy prepaid credits instead of rigid monthly plans.",
   highlights: [

@@ -2,6 +2,7 @@
 import FeaturedProjectCard from "./FeaturedProjectCard";
 import ProjectCard from "./ProjectCard";
 import { rankTraqProject } from "@/data/rankTraq";
+import { nahfaStoreProject } from "@/data/nahfaStore";
 import img1 from "@/public/images/project/1.png";
 import img2 from "@/public/images/project/3.png";
 import img3 from "@/public/images/project/6.png";
@@ -96,7 +97,8 @@ const ProjectSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-4">
         My Projects
       </h2>
-      <FeaturedProjectCard {...rankTraqProject} />
+      <FeaturedProjectCard {...rankTraqProject} priority />
+      <FeaturedProjectCard {...nahfaStoreProject} />
 
       <div className="text-white flex  justify-center items-center gap-2 md:gap-5 text-sm md:text-base flex-wrap py-6 mt-10">
         <ProjectTag

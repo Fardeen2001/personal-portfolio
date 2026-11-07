@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logo from "@/public/logo.png";
 import { RANKTRAQ_WEBSITE_URL } from "@/data/rankTraq";
+import { NAHFA_STORE_URL } from "@/data/nahfaStore";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
           <Image src={logo} alt="logo" quality={100} width={70} />
         </span>
         <p className="text-[#ADB7BE] text-sm">
-          Featured project:{" "}
+          Featured projects:{" "}
           <a
             href={RANKTRAQ_WEBSITE_URL}
             rel="noopener"
@@ -18,7 +19,15 @@ const Footer = () => {
           >
             Rank Traq
           </a>{" "}
-          — Google rank tracker with AI Overviews
+          — Google rank tracker with AI Overviews ·{" "}
+          <a
+            href={NAHFA_STORE_URL}
+            rel="noopener"
+            className="text-primary-400 hover:text-primary-300 underline underline-offset-4"
+          >
+            Nahfa Store
+          </a>{" "}
+          — halal wellness food e-commerce
         </p>
         <p className="text-slate-600 text-sm">All rights reserved.</p>
       </div>
